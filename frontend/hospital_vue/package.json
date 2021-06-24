@@ -1,0 +1,31 @@
+{
+  "name": "hospital_vue",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bulma": "^0.9.2",
+    "bulma-pageloader": "^0.3.0",
+    "bulma-timeline": "^3.0.4",
+    "core-js": "^3.6.5",
+    "v-calendar": "^3.0.0-alpha.4",
+    "v-tooltip": "^4.0.0-alpha.1",
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0-0",
+    "vuex": "^4.0.0-0"
+  },
+  "devDependencies": {
+    "@creativebulma/bulma-tooltip": "^1.2.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2"
+  }
+}
