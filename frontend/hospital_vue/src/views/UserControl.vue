@@ -60,18 +60,19 @@
                 <td>{{ user.get_full_name }}</td>
                 <td>{{ user.user_type }}</td>
                 <td>{{ user.get_joined_data_formatted }}</td>
-                <td v-if="user.user_type === 'patient' || user.user_type === 'manager'">
-                  <router-link
-                    :to="{ name: 'PatientInfo', params: { email: user.email } }">
-                    Details
-                  </router-link>
-                </td>
-                <td v-else-if="user.user_type === 'doctor'">
+                <td v-if="user.user_type === 'doctor'">
                   <router-link
                     :to="{ name: 'DoctorInfo', params: { email: user.email } }">
                     Details
                     </router-link>
                 </td>
+                <td v-else>
+                  <router-link
+                    :to="{ name: 'PatientInfo', params: { email: user.email } }">
+                    Details
+                  </router-link>
+                </td>
+                
               </tr>
             </tbody>
           </table>
@@ -102,8 +103,8 @@ export default {
       this.$router.push("/");
     }
   },
-  mounted() {
-    this.getUsers();
+  async mounted() {
+    await this.getUsers();
   },
   computed: {
     sortUserListByType() {
@@ -120,9 +121,10 @@ export default {
     getUsers() {
       this.isLoading = true;
       axios.get("/api/accounts/").then((res) => {
-        this.isLoading = false;
+        console.log('users: ', res.data)
         this.users = res.data;
         this.filteredUsers = this.users;
+        this.isLoading = false;
       });
     },
     searchData() {
@@ -130,6 +132,7 @@ export default {
         .get(
           `/api/accounts/?q=${this.keyword}`)
         .then((res) => {
+
           this.users = res.data;
           this.filteredUsers = this.users;
         });

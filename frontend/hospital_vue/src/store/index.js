@@ -37,7 +37,7 @@ export default createStore({
   },
   actions: {
     initializeStore(context) {
-      context.commit('initializeStore')
+      context.commit("initializeStore");
     },
     setToken(context, payload) {
       context.commit("setToken", payload);
