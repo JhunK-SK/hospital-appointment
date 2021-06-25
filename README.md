@@ -85,7 +85,11 @@ Most of the pages are not allowed for users to access without an authentication 
         * Doctor profile picture can be updated by separated serializer for uploading.
         * So `DoctorSerializer` has `picture` field as `read_only=True`.
 
-
+7. pictures
+    ![make-appointment-page](pictures/make-appointment-page.png)
+    ![appointment-page](pictures/appointment-page.png)
+    ![users-page](pictures/users-page.png)
+    ![doctor-info-page](pictures/doctor-info-page.png)
 
 ## Frameworks and languages used
 
