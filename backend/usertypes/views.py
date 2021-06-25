@@ -68,6 +68,8 @@ class DoctorViewSet(viewsets.ModelViewSet):
                 first_name=user.first_name,
                 last_name=user.last_name
             )
+            print('created')
+
         return self.queryset.filter(user=user)
     
 

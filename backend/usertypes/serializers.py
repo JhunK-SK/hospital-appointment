@@ -36,7 +36,6 @@ class PatientSerializer(serializers.ModelSerializer):
         user.first_name = first_name
         user.last_name = last_name
         user.user_type = validated_data.get('user', instance.user).get('user_type', instance.user.user_type)
-        
         user.save()
         
         instance.first_name = validated_data.get('first_name', instance.first_name)

@@ -55,7 +55,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     is_superuser = models.BooleanField(default=False)
     
     # three types that users can be
-    user_type = models.CharField(max_length=20, choices=USER_TYPE, 
+    user_type = models.CharField(max_length=60, choices=USER_TYPE, 
                                  default=PATIENT)
     
     
